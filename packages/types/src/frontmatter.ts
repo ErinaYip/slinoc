@@ -403,6 +403,20 @@ export interface Frontmatter extends TransitionOptions {
    */
   title?: string
   /**
+   * Icon shown next to the slide title in the sidebar.
+   * Accepts an emoji, a Nerd Font glyph, or an icon class such as `i-carbon:home`.
+   *
+   * @example
+   * ```yaml
+   * icon: 🚀
+   * ```
+   * @example
+   * ```yaml
+   * icon: i-carbon:code
+   * ```
+   */
+  icon?: string
+  /**
    * Override the title level for the `<TitleRenderer>` and `<Toc>` components
    * Only if `title` has also been declared
    */

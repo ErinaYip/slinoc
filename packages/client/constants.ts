@@ -42,6 +42,7 @@ export const FRONTMATTER_FIELDS = [
   'routeAlias',
   'src',
   'title',
+  'icon',
   'transition',
   'zoom',
   'dragPos',

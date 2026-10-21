@@ -154,6 +154,10 @@ disabled: false
 hide: false
 # hide the slide for the <Toc> components
 hideInToc: false
+# icon shown next to the slide title in the sidebar
+# accepts an emoji, a Nerd Font glyph, or an UnoCSS icon class
+# Learn more: https://sli.dev/features/icons
+icon: undefined # or string (e.g. '🚀' or 'i-carbon:code')
 # defines the layout component applied to the slide
 layout: <"cover" if the slide is the first slide, otherwise "default">
 # custom class(es) added to the slide root element

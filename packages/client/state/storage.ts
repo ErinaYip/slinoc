@@ -63,6 +63,7 @@ export function togglePresenterCursor() {
 }
 
 export const showEditor = useLocalStorage('slidev-show-editor', false, { listenToStorageChanges: false })
+export const sidebarWidth = useLocalStorage('slidev-sidebar-width', 72, { listenToStorageChanges: false })
 export const isEditorVertical = useLocalStorage('slidev-editor-vertical', false, { listenToStorageChanges: false })
 export const editorWidth = useLocalStorage('slidev-editor-width', isClient ? window.innerWidth * 0.4 : 318, { listenToStorageChanges: false })
 export const editorHeight = useLocalStorage('slidev-editor-height', isClient ? window.innerHeight * 0.4 : 300, { listenToStorageChanges: false })

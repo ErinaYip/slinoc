@@ -4,12 +4,14 @@ import { computed, ref, shallowRef } from 'vue'
 import { useDrawings } from '../composables/useDrawings'
 import { useHideCursorIdle } from '../composables/useHideCursorIdle'
 import { useNav } from '../composables/useNav'
+import { useSidebar } from '../composables/useSidebar'
 import { useSwipeControls } from '../composables/useSwipeControls'
 import { useWakeLock } from '../composables/useWakeLock'
 import Controls from '../internals/Controls.vue'
 import LaserPointer from '../internals/LaserPointer.vue'
 import NavControls from '../internals/NavControls.vue'
 import PresenterMouse from '../internals/PresenterMouse.vue'
+import Sidebar from '../internals/Sidebar.vue'
 import SlideContainer from '../internals/SlideContainer.vue'
 import SlidesShow from '../internals/SlidesShow.vue'
 import { onContextMenu } from '../logic/contextMenu'
@@ -18,6 +20,7 @@ import { editorHeight, editorWidth, isEditorVertical, isScreenVertical, showEdit
 
 const { next, prev, isPrintMode, isPlaying, isEmbedded } = useNav()
 const { isDrawing } = useDrawings()
+const { isSidebarVisible } = useSidebar()
 
 const root = ref<HTMLDivElement>()
 function onClick(e: MouseEvent) {
@@ -59,6 +62,15 @@ if (import.meta.hot) {
 
 const persistNav = computed(() => isScreenVertical.value || showEditor.value)
 
+const rootClass = computed(() => isEditorVertical.value
+  ? [
+      'grid-rows-[1fr_max-content]',
+      isSidebarVisible.value ? 'grid-cols-[max-content_1fr]' : '',
+    ]
+  : [
+      isSidebarVisible.value ? 'grid-cols-[max-content_1fr_max-content]' : 'grid-cols-[1fr_max-content]',
+    ])
+
 const SideEditor = shallowRef<any>()
 if (__DEV__ && __SLIDEV_FEATURE_EDITOR__)
   import('../internals/SideEditor.vue').then(v => SideEditor.value = v.default)
@@ -86,8 +98,9 @@ const contentStyle = computed(() => {
 <template>
   <div
     id="page-root" ref="root" class="grid"
-    :class="isEditorVertical ? 'grid-rows-[1fr_max-content]' : 'grid-cols-[1fr_max-content]'"
+    :class="rootClass"
   >
+    <Sidebar v-if="isSidebarVisible" :class="isEditorVertical ? 'row-span-2' : ''" />
     <SlideContainer
       :style="{ background: 'var(--slidev-slide-container-background, black)' }"
       is-main

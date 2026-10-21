@@ -6,6 +6,7 @@ theme: seriph
 background: https://cover.sli.dev
 # some information about your slides (markdown enabled)
 title: Welcome to Slidev
+icon: 🚀
 info: |
   ## Slidev Starter Template
   Presentation slides for developers.
@@ -47,6 +48,7 @@ The last comment block of each slide will be treated as slide notes. It will be 
 
 ---
 transition: fade-out
+icon: 📝
 ---
 
 # What is Slidev?
@@ -89,6 +91,7 @@ Here is another comment.
 ---
 transition: slide-up
 level: 2
+icon: ⌨️
 ---
 
 # Navigation
@@ -116,6 +119,7 @@ Hover on the bottom-left corner to see the navigation's controls panel, [learn m
 ---
 layout: two-cols
 layoutClass: gap-16
+icon: 📑
 ---
 
 # Table of contents
@@ -135,6 +139,7 @@ The title will be inferred from your slide content, or you can override it with 
 ---
 layout: image-right
 image: https://cover.sli.dev
+icon: i-carbon:code
 ---
 
 # Code
@@ -187,6 +192,7 @@ Notes can also sync with clicks
 
 ---
 level: 2
+icon: ✨
 ---
 
 # Shiki Magic Move
@@ -260,6 +266,8 @@ const author = {
 ````
 
 ---
+icon: 🧩
+---
 
 # Components
 
@@ -303,6 +311,7 @@ Also, HTML elements are valid:
 
 ---
 class: px-20
+icon: 🎨
 ---
 
 # Themes
@@ -332,6 +341,8 @@ theme: seriph
 Read more about [How to use a theme](https://sli.dev/guide/theme-addon#use-theme) and
 check out the [Awesome Themes Gallery](https://sli.dev/resources/theme-gallery).
 
+---
+icon: 👆
 ---
 
 # Clicks Animations
@@ -394,6 +405,8 @@ also allows you to add
 
 </div>
 
+---
+icon: 🎬
 ---
 
 # Motions
@@ -475,6 +488,8 @@ const final = {
 </div>
 
 ---
+icon: 🧮
+---
 
 # $\LaTeX$
 
@@ -496,6 +511,8 @@ $$
 
 [Learn more](https://sli.dev/features/latex)
 
+---
+icon: 📊
 ---
 
 # Diagrams
@@ -576,6 +593,7 @@ Learn more: [Mermaid Diagrams](https://sli.dev/features/mermaid) and [PlantUML D
 
 ---
 foo: bar
+icon: 🖱️
 dragPos:
   square: 691,32,167,_,-16
 ---
@@ -622,8 +640,11 @@ Double-click on the draggable elements to edit their positions.
 ---
 src: ./pages/imported-slides.md
 hide: false
+icon: 📥
 ---
 
+---
+icon: i-carbon:edit
 ---
 
 # Monaco Editor
@@ -653,6 +674,7 @@ console.log(emptyArray<number>(10).reduce(fib => [...fib, fib.at(-1)! + fib.at(-
 ---
 layout: center
 class: text-center
+icon: 📚
 ---
 
 # Learn More
